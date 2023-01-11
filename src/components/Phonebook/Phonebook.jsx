@@ -26,13 +26,13 @@ export const Phonebook = () => {
   const formHandler = (newName, newNumber) => {
     let isAdded = false;
 
-    contacts.filter(contact => {
+    contacts.map(contact => {
       if (newName.toLowerCase() === contact.name.toLowerCase()) {
         alert(`${newName} is already in contacts!`);
         isAdded = true;
-        return contact.name;
+        return contact;
       }
-      return;
+      return contact;
     });
     if (isAdded !== true) {
       setContacts([
