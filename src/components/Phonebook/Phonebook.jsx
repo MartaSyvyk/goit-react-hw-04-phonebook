@@ -14,7 +14,7 @@ export const Phonebook = () => {
 
   const [contacts, setContacts] = useState(() => {
     const parsedContacts = JSON.parse(localStorage.getItem('contacts'));
-    return parsedContacts.length > 0 ? parsedContacts : initialContacts;
+    return parsedContacts?.length > 0 ? parsedContacts : initialContacts;
   });
 
   const [filter, setFilter] = useState('');
